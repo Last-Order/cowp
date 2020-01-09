@@ -16,10 +16,10 @@ axios({
         method: 'POST',
         url: downloadApi,
         headers: {
-            'Referer': url,
+            'Referer': `https://cowtransfer.com/s/${fileId}`,
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
         }
     }).then(downloadInfo => {
-        console.log(`${downloadInfo.data.link} --header 'referer: ${url}' --header 'authority: static.cowtransfer.com' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36' -O "${filename}"`);
+        console.log(`${downloadInfo.data.link} --header 'referer: https://cowtransfer.com/s/${fileId}' --header 'authority: static.cowtransfer.com' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36' -O "${filename}"`);
     });
 })
