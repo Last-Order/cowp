@@ -10,7 +10,7 @@ axios({
     url: transferDetailApi,
 }).then(transferDetail => {
     const guid = transferDetail.data.transferFileDtos[0].guid;
-    const filename = transferDetail.data.transferFileDtos[0].guid;
+    const filename = transferDetail.data.transferFileDtos[0].fileName;
     const downloadApi = `https://cowtransfer.com/transfer/download?guid=${guid}`;
     axios({
         method: 'POST',
